@@ -18,7 +18,7 @@ create table besetzung(
 	primary key(titel, ejahr)
 );
 
-create table darsteller(
+create table schauspieler(
 	name char(20),
 	gebJahr int(4),
 	gender char(1),
@@ -26,7 +26,24 @@ create table darsteller(
 );
 
 insert into filme values("titanic",1999,"schnulze",190);
-insert into filme values("jurassicpark",1993,"action",190);
+insert into filme values("Aviator",2004,"Drama",130);
 
-insert into besetzung values("Jack","titanic",1999,"Leonardo DiCaprio",1974,2000000);
-insert into besetzung values("Rose","titanic",1999,"Cate",1975,1500000);
+insert into besetzung values("Jack","titanic",1999,"DiCaprio",2000000);
+insert into besetzung values("Rose","titanic",1999,"Kate",1500000);
+insert into besetzung values("Hughes","Aviator",2004,"DiCaprio",3000000);
+
+insert into schauspieler values("DiCaprio",1974,"m");
+insert into schauspieler values("Kate",1975,"w");
+
+select * from filme;
+select * from besetzung;
+select * from schauspieler;
+
+select * from filme
+	natural join besetzung
+	natural join schauspieler;
+
+drop table filme;
+drop table besetzung;
+drop table schauspieler;
+drop database rdb3;
