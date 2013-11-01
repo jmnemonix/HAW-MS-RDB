@@ -14,10 +14,18 @@ public class HalloSimpleServlet
 
 		PrintWriter out = res.getWriter();
 
-		String name = "Mein erstes Servlet";
+		// Eingaben von Website hollen
+		String name = req.getParameter("vorname");
+		String zahl = req.getParameter("anzahl");
 
-		out.println("<html><head><title>"+name+"</title></head><body bgcolor=\"#9999DD\" color=\"#440000\">");
-		out.println("<p>Hallo "+name+"</p>");
+		int z = Integer.parseInt(zahl.trim());
+
+		out.println("<html><head><title>unser kleines Servlet</title></head><body bgcolor=\"#9999DD\" color=\"#440000\">");
+		
+
+		for(int i=0; i<z ; i++) out.println("<p>Hallo "+name+" Nr."+i+"</p>");
+
+
 		out.println("</body></html>");
 
 		out.close();
@@ -29,30 +37,3 @@ public class HalloSimpleServlet
 		doGet(req,res);
 	}
 }
-
-/*
-/Erstes Java Servlet
-import java.io.*;
-import javax.servlet.http.*;
-import javax.servlet.*;
-
-public class HalloSimpleServlet extends HttpServlet
-{
-   public void doGet(HttpServletRequest req, HttpServletResponse res)
-      throws ServletException, IOException
-   {
-      PrintWriter out =  res.getWriter();
-      String name="Mein erstes Servlet";
-      out.println("<html><head><title> "+name+"</title></head>");
-      out.println("<body bgcolor=\"#ccFFcc\"> ");
-      out.println(name);
-      out.println("<hr></body></html>");
-      out.close();
-   }
-   public void doPost(HttpServletRequest req, HttpServletResponse res)
-      throws ServletException, IOException
-   {
-      doGet(req,res);
-   }
-    
-}*/
