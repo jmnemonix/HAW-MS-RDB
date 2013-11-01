@@ -12,6 +12,6 @@
 	<br>Bitte Namen eingeben: <INPUT type=text name=vorname>
 	<br>Bitte Zahl eingeben: <INPUT type=text name=anzahl>
 		 <br><br>
-  Bitte Button klicken! <br> <input type="submit">
+  Bitte Button klicken! <br> <INPUT type="submit">
 
 </FORM></body></html>
